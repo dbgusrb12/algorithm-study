@@ -9,7 +9,6 @@ public class ArrayImpl implements Array {
         if (sNum.length() != N) {
             throw new IllegalArgumentException("The length of sNum must be equal to N.");
         }
-
         char[] chars = sNum.toCharArray();
         int sum = 0;
         for (int i = 0; i < chars.length; i++) {
@@ -31,7 +30,6 @@ public class ArrayImpl implements Array {
         if (testScores.length != N) {
             throw new IllegalArgumentException("The length of testScores must be equal to N.");
         }
-
         double sum = 0;
         int max = 0;
         for (int i = 0; i < testScores.length; i++) {
