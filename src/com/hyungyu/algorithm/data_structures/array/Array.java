@@ -1,4 +1,4 @@
-package com.hyungyu.algorithm.data_structures;
+package com.hyungyu.algorithm.data_structures.array;
 
 public interface Array {
 
