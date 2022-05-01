@@ -1,10 +1,10 @@
-package com.hyungyu.algorithm.data_structures.prefix_sum;
+package com.hyungyu.algorithm.book._3_3;
 
 import java.util.Scanner;
 
-public class PrefixSum {
+public class Solution {
 
-    public void prefixSum() {
+    public void solution() {
         Scanner sc = new Scanner(System.in);
 
         int N = sc.nextInt();
