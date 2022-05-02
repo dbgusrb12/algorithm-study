@@ -16,7 +16,8 @@ public class Solution {
         // sum 은 구해지는 값이 정수형이기 때문에 int 로 선언
         int sum = 0;
         int max = 0;
-        for (int i = 0; i < testScores.length; i++) {
+        int length = testScores.length;
+        for (int i = 0; i < length; i++) {
             if (max < testScores[i]) {
                 max = testScores[i];
             }
