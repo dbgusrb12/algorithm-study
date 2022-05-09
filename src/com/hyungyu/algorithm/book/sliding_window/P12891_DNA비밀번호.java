@@ -1,4 +1,4 @@
-package com.hyungyu.algorithm.book._3_9;
+package com.hyungyu.algorithm.book.sliding_window;
 
 import java.io.BufferedReader;
 import java.io.IOException;

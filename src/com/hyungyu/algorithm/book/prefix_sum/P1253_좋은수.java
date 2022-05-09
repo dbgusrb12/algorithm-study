@@ -1,4 +1,4 @@
-package com.hyungyu.algorithm.book._3_8;
+package com.hyungyu.algorithm.book.prefix_sum;
 
 import java.util.Arrays;
 import java.util.Scanner;

@@ -1,4 +1,4 @@
-package com.hyungyu.algorithm.book._3_1;
+package com.hyungyu.algorithm.book.array_and_list;
 
 import java.util.Scanner;
 

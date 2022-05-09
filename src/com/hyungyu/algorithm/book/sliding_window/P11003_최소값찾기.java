@@ -1,4 +1,4 @@
-package com.hyungyu.algorithm.book._3_10;
+package com.hyungyu.algorithm.book.sliding_window;
 
 import java.io.*;
 import java.util.Deque;
@@ -6,7 +6,6 @@ import java.util.LinkedList;
 import java.util.StringTokenizer;
 
 public class P11003_최소값찾기 {
-
     public static void main(String[] args) throws IOException {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));

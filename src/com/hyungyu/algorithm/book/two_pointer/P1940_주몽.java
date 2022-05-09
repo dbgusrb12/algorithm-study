@@ -1,4 +1,4 @@
-package com.hyungyu.algorithm.book._3_7;
+package com.hyungyu.algorithm.book.two_pointer;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -6,14 +6,12 @@ import java.util.Scanner;
 public class P1940_주몽 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
         int N = sc.nextInt();
         int M = sc.nextInt();
         int[] C = new int[N];
         for (int i = 0; i < N; i++) {
             C[i] = sc.nextInt();
         }
-
         Arrays.sort(C);
         int start_index = 0;
         int end_index = N - 1;

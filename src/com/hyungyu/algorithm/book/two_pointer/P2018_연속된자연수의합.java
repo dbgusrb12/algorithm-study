@@ -1,4 +1,4 @@
-package com.hyungyu.algorithm.book._3_6;
+package com.hyungyu.algorithm.book.two_pointer;
 
 import java.util.Scanner;
 

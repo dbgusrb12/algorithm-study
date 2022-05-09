@@ -1,4 +1,4 @@
-package com.hyungyu.algorithm.book._3_4;
+package com.hyungyu.algorithm.book.prefix_sum;
 
 import java.io.BufferedReader;
 import java.io.IOException;
