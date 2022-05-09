@@ -2,22 +2,13 @@ package com.hyungyu.algorithm.book._3_5;
 
 import java.util.Scanner;
 
-public class Solution {
-
+public class P10986_나머지합 {
     public static void main(String[] args) {
-        Solution solution = new Solution();
-        solution.solution();
-    }
-
-    public void solution() {
         Scanner sc = new Scanner(System.in);
-
         int N = sc.nextInt();
         int M = sc.nextInt();
-
         int[] S = new int[N + 1];
         int[] C = new int[M];
-
         for (int i = 1; i <= N; i++) {
             S[i] = S[i - 1] + sc.nextInt();
         }
@@ -30,13 +21,11 @@ public class Solution {
 
             C[remainder]++;
         }
-
         for (int i = 0; i < M; i++) {
             if (C[i] > 1) {
                 answer += C[i] * (C[i] - 1) / 2;
             }
         }
-
         System.out.println(answer);
     }
 }

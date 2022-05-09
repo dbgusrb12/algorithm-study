@@ -3,14 +3,8 @@ package com.hyungyu.algorithm.book._3_7;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Solution {
-
+public class P1940_주몽 {
     public static void main(String[] args) {
-        Solution solution = new Solution();
-        solution.solution();
-    }
-
-    public void solution() {
         Scanner sc = new Scanner(System.in);
 
         int N = sc.nextInt();

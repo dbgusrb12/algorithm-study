@@ -5,26 +5,19 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Solution {
-    int[] checkPwd = new int[4];
-    int[] myPwd = new int[4];
-    int check = 0;
+public class P12891_DNA비밀번호 {
+    static int[] checkPwd = new int[4];
+    static int[] myPwd = new int[4];
+    static int check = 0;
 
     public static void main(String[] args) throws IOException {
-        Solution solution = new Solution();
-        solution.solution();
-    }
-
-    public void solution() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
         int S = Integer.parseInt(st.nextToken());
         int P = Integer.parseInt(st.nextToken());
-//        char[] dna = new char[S];
-
+        char[] dna = new char[S];
         st = new StringTokenizer(br.readLine());
-        char[] dna = st.nextToken().toCharArray();
-
+        dna = st.nextToken().toCharArray();
         st = new StringTokenizer(br.readLine());
         for (int i = 0; i < 4; i++) {
             checkPwd[i] = Integer.parseInt(st.nextToken());
@@ -32,7 +25,6 @@ public class Solution {
                 check++;
             }
         }
-
         int count = 0;
         for (int i = 0; i < P; i++) {
             addMyPwd(dna[i]);
@@ -40,7 +32,6 @@ public class Solution {
         if (check == 4) {
             count++;
         }
-
         for (int i = P; i < S; i++) {
             int minus = i - P;
             addMyPwd(dna[i]);
@@ -49,12 +40,11 @@ public class Solution {
                 count++;
             }
         }
-
         System.out.println(count);
         br.close();
     }
 
-    private void addMyPwd(char word) {
+    private static void addMyPwd(char word) {
         switch (word) {
             case 'A':
                 myPwd[0]++;
@@ -83,7 +73,7 @@ public class Solution {
         }
     }
 
-    private void removeMyPwd(char word) {
+    private static void removeMyPwd(char word) {
         switch (word) {
             case 'A':
                 if (myPwd[0] == checkPwd[0]) {

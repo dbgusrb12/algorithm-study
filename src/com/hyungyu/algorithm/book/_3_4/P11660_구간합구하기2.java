@@ -5,20 +5,13 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Solution {
-
+public class P11660_구간합구하기2 {
     public static void main(String[] args) throws IOException {
-        Solution solution = new Solution();
-        solution.solution();
-    }
-
-    public void solution() throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer stringTokenizer = new StringTokenizer(bufferedReader.readLine());
         int N = Integer.parseInt(stringTokenizer.nextToken());
         int M = Integer.parseInt(stringTokenizer.nextToken());
         int[][] nArray = new int[N + 1][N + 1];
-
         for (int x = 1; x <= N; x++) {
             stringTokenizer = new StringTokenizer(bufferedReader.readLine());
             for (int y = 1; y <= N; y++) {
@@ -26,8 +19,6 @@ public class Solution {
 //                nArray[x][y] = nArray[x][y - 1] + Integer.parseInt(stringTokenizer.nextToken());
             }
         }
-
-
         for (int i = 0; i < M; i++) {
             stringTokenizer = new StringTokenizer(bufferedReader.readLine());
             int x1 = Integer.parseInt(stringTokenizer.nextToken());
