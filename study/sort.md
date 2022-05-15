@@ -62,3 +62,28 @@
 
 적절한 삽입 위치를 탐색하는 부분에서 이진 탐색(binary search) 등과 같은 탐색 알고리즘을 사용하면  
 시간 복잡도를 줄일 수 있다.
+
+# 퀵 정렬
+
+퀵 정렬(quick sort)은 기준값(pivot)을 선정해 해당 값보다 작은 데이터와 큰 데이터로 분류하는 것을 반복해 정렬하는 방식이다.  
+기준값이 어떻게 선정되는지가 시간 복잡도에 많은 영향을 미치고, 평균적인 시간 복잡도는 O(nlogn)이다.
+
+## 퀵 정렬 과정
+
+`startValue` = `start` 가 가리키는 데이터  
+`endValue` = `end` 가 가리키는 데이터  
+`pivotValue` = `pivot` 이 가리키는 데이터  
+
+1. 데이터를 분할하는 `pivot` 을 설정한다.
+2. `pivot` 을 기준으로 다음 i ~ v 과정을 거쳐 데이터를 2개의 집합으로 분리한다.
+   1. `startValue`가 `pivotValue`보다 작으면 `start` 를 오른쪽으로 1칸 이동한다.
+   2. `endValue`가 `pivotValue`보다 크면 `end` 를 왼쪽으로 1칸 이동한다.
+   3. `startValue`가 `pivotValue`보다 크고, `endValue`가 `pivotValue`보다 작으면  
+      `startValue` 와 `endValue` 를 swap 하고 `start` 는 오른쪽, `end` 는 왼쪽으로 1칸씩 이동한다.
+   4. `start` 와 `end` 가 만날때까지 `i` ~ `iii` 를 반복한다.
+   5. `start` 와 `end` 가 만나면 만난 지점에서 가리키는 데이터와 `pivotValue`를 비교하여  
+      `pivotValue`가 크면 만난 지점의 오른쪽에, 작으면 만난 지점의 왼쪽에 `pivotValue`를 삽입한다.
+3. 분리 집합에서 각각 다시 `pivot` 을 선정한다.
+4. 분리 집합이 1개 이하가 될 때까지 1 ~ 3 을 반복한다.
+
+`pivot` 으로 선정한 수는 무조건 정렬 순서에 맞게 들어감
