@@ -11,12 +11,12 @@ public class P11268_절대값힙 {
         int N = Integer.parseInt(br.readLine());
 
         PriorityQueue<Integer> queue = new PriorityQueue<>((o1, o2) -> {
-           int first_abs = Math.abs(o1);
-           int second_abs = Math.abs(o2);
-           if (first_abs == second_abs) {
+           int firstAbs = Math.abs(o1);
+           int secondAbs = Math.abs(o2);
+           if (firstAbs == secondAbs) {
                return o1 > o2 ? 1 : -1;
            }
-           return first_abs - second_abs;
+           return firstAbs - secondAbs;
         });
 
         for (int i = 0; i < N; i++) {

@@ -14,24 +14,24 @@ public class P1253_좋은수 {
         Arrays.sort(C);
         int count = 0;
         for (int i = 0; i < N; i++) {
-            int start_index = 0;
-            int end_index = N - 1;
+            int startIndex = 0;
+            int endIndex = N - 1;
             long K = C[i];
 
-            while (start_index < end_index) {
-                long sum = C[start_index] + C[end_index];
+            while (startIndex < endIndex) {
+                long sum = C[startIndex] + C[endIndex];
                 if (sum < K) {
-                    start_index++;
+                    startIndex++;
                 } else if (sum > K) {
-                    end_index--;
+                    endIndex--;
                 } else {
-                    if (start_index != i && end_index != i) {
+                    if (startIndex != i && endIndex != i) {
                         count++;
                         break;
-                    } else if (start_index == i) {
-                        start_index++;
-                    } else if (end_index == i) {
-                        end_index--;
+                    } else if (startIndex == i) {
+                        startIndex++;
+                    } else if (endIndex == i) {
+                        endIndex--;
                     }
                 }
             }

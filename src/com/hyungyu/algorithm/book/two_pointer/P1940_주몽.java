@@ -13,20 +13,20 @@ public class P1940_주몽 {
             C[i] = sc.nextInt();
         }
         Arrays.sort(C);
-        int start_index = 0;
-        int end_index = N - 1;
+        int startIndex = 0;
+        int endIndex = N - 1;
         int sum = 0;
         int count = 0;
-        while (start_index < end_index) {
-            sum = C[start_index] + C[end_index];
+        while (startIndex < endIndex) {
+            sum = C[startIndex] + C[endIndex];
             if (sum > M) {
-                end_index--;
+                endIndex--;
             } else if (sum < M) {
-                start_index++;
+                startIndex++;
             } else {
                 count++;
-                start_index++;
-                end_index--;
+                startIndex++;
+                endIndex--;
             }
         }
         System.out.println(count);
