@@ -3,31 +3,30 @@ package com.hyungyu.algorithm.book.sort;
 import java.util.Scanner;
 
 public class P2751_수정렬하기2 {
-    public static int[] numArray;
-    public static int[] tempArray;
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         StringBuilder sb = new StringBuilder();
         int N = sc.nextInt();
-        numArray = new int[N + 1];
-        tempArray = new int[N + 1];
+
+        int[] numArray = new int[N + 1];
+        int[] tempArray = new int[N + 1];
         for (int i = 1; i <= N; i++) {
             numArray[i] = sc.nextInt();
         }
-        mergeSort(1, N);
+        mergeSort(1, N, numArray, tempArray);
         for (int i = 1; i <= N; i++) {
             sb.append(numArray[i] + "\n");
         }
         System.out.println(sb.toString());
     }
 
-    private static void mergeSort(int startIndex, int endIndex) {
+    private static void mergeSort(int startIndex, int endIndex, int[] numArray, int[] tempArray) {
         if (endIndex - startIndex < 1) {
             return;
         }
         int middleIndex = startIndex + (endIndex - startIndex) / 2;
-        mergeSort(startIndex, middleIndex);
-        mergeSort(middleIndex + 1, endIndex);
+        mergeSort(startIndex, middleIndex, numArray, tempArray);
+        mergeSort(middleIndex + 1, endIndex, numArray, tempArray);
 
         for (int i = startIndex; i <= endIndex; i++) {
             tempArray[i] = numArray[i];
