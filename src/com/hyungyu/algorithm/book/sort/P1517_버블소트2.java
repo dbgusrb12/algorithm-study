@@ -2,10 +2,10 @@ package com.hyungyu.algorithm.book.sort;
 
 import java.util.Scanner;
 
-public class P2751_수정렬하기2 {
+public class P1517_버블소트2 {
+    public static long answer;
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        StringBuilder sb = new StringBuilder();
         int N = sc.nextInt();
 
         int[] numArray = new int[N + 1];
@@ -14,10 +14,7 @@ public class P2751_수정렬하기2 {
             numArray[i] = sc.nextInt();
         }
         mergeSort(1, N, numArray, tempArray);
-        for (int i = 1; i <= N; i++) {
-            sb.append(numArray[i] + "\n");
-        }
-        System.out.println(sb.toString());
+        System.out.println(answer);
     }
 
     private static void mergeSort(int startIndex, int endIndex, int[] numArray, int[] tempArray) {
@@ -38,6 +35,7 @@ public class P2751_수정렬하기2 {
             // 양쪽 그룹의 index 가 가리키는 값을 비교해 더 작은 수를 선택해 배열에 저장하고, 선택된 데이터의 index 값을 오른쪽으로 한 칸 이동한다.
             if (tempArray[leftIndex] > tempArray[rightIndex]) {
                 numArray[numArrayIndex] = tempArray[rightIndex];
+                answer += rightIndex - numArrayIndex;
                 numArrayIndex++;
                 rightIndex++;
             } else {
