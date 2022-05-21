@@ -11,27 +11,29 @@ public class P11004_K번째수 {
         StringTokenizer st = new StringTokenizer(br.readLine());
         int N = Integer.parseInt(st.nextToken());
         int K = Integer.parseInt(st.nextToken());
-
-        int[] numArray = new int[N];
         st = new StringTokenizer(br.readLine());
+        int[] numArray = new int[N];
         for (int i = 0; i < N; i++) {
             numArray[i] = Integer.parseInt(st.nextToken());
         }
         quickSort(numArray, 0, N - 1, K - 1);
         System.out.println(numArray[K - 1]);
+
     }
 
     public static void quickSort(int[] numArray, int startIndex, int endIndex, int K) {
-        if (startIndex < endIndex) {
-            int pivot = compareTo(numArray, startIndex, endIndex);
-            if (pivot == K) {
-                return;
-            } else if (pivot < K) {
-                quickSort(numArray, pivot + 1, endIndex, K);
-            } else {
-                quickSort(numArray, startIndex, pivot - 1, K);
-            }
+        if (startIndex >= endIndex) {
+            return;
         }
+        int pivot = compareTo(numArray, startIndex, endIndex);
+        if (pivot == K) {
+            return;
+        }
+        if (K < pivot) {
+            quickSort(numArray, startIndex, pivot - 1, K);
+            return;
+        }
+        quickSort(numArray, pivot + 1, endIndex, K);
     }
 
     public static int compareTo(int[] numArray, int startIndex, int endIndex) {

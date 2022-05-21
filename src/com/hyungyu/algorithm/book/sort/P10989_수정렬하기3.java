@@ -32,8 +32,10 @@ public class P10989_수정렬하기3 {
                 bucket[i] += bucket[i - 1];
             }
             for (int i = length - 1; i >= 0; i--) {
-                tempArray[bucket[(numArray[i] / digit % 10)] - 1] = numArray[i];
-                bucket[(numArray[i] / digit) % 10]--;
+                int bucketIndex = numArray[i] / digit % 10;
+                int tempArrayIndex = bucket[bucketIndex] - 1;
+                tempArray[tempArrayIndex] = numArray[i];
+                bucket[bucketIndex]--;
             }
             for (int i = 0; i < length; i++) {
                 numArray[i] = tempArray[i];
