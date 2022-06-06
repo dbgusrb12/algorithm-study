@@ -1,6 +1,7 @@
 package com.hyungyu.algorithm.book.number_theory;
 
 import java.io.BufferedWriter;
+import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -10,8 +11,9 @@ public class P1033_칵테일 {
     public static long lcm;
     public static boolean[] visitArray;
     public static long[] D;
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         int N = sc.nextInt();
         A = new ArrayList[N];
         visitArray = new boolean[N];
@@ -36,8 +38,11 @@ public class P1033_칵테일 {
             mgcd = gcd(mgcd, D[i]);
         }
         for (int i = 0; i < N; i++) {
-            System.out.println(D[i] / mgcd + " ");
+            bw.write(D[i] / mgcd + " ");
         }
+        bw.flush();
+        System.out.println();
+        bw.close();
     }
 
     public static long gcd(long a, long b) {
@@ -73,24 +78,12 @@ public class P1033_칵테일 {
             return b;
         }
 
-        public void setB(int b) {
-            this.b = b;
-        }
-
         public int getP() {
             return p;
         }
 
-        public void setP(int p) {
-            this.p = p;
-        }
-
         public int getQ() {
             return q;
-        }
-
-        public void setQ(int q) {
-            this.q = q;
         }
     }
 }
