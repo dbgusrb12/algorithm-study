@@ -13,14 +13,11 @@ public class P1931_회의실배정 {
             meetingArray[i][0] = sc.nextInt();
             meetingArray[i][1] = sc.nextInt();
         }
-        Arrays.sort(meetingArray, new Comparator<int[]>() {
-            @Override
-            public int compare(int[] startTime, int[] endTime) {
-                if (startTime[1] == endTime[1]) {
-                    return startTime[0] - endTime[0];
-                }
-                return startTime[1] - endTime[1];
+        Arrays.sort(meetingArray, (startTime, endTime) -> {
+            if (startTime[1] == endTime[1]) {
+                return startTime[0] - endTime[0];
             }
+            return startTime[1] - endTime[1];
         });
         int answer = 0;
         int end = -1;
