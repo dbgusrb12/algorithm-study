@@ -11,6 +11,7 @@ public class P1033_칵테일 {
     public static long lcm;
     public static boolean[] visitArray;
     public static long[] D;
+
     public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
@@ -20,7 +21,7 @@ public class P1033_칵테일 {
         D = new long[N];
         lcm = 1;
         for (int i = 0; i < N; i++) {
-            A[i] = new ArrayList<>();
+            A[i] = new ArrayList<cNode>();
         }
         for (int i = 0; i < N - 1; i++) {
             int a = sc.nextInt();
@@ -28,7 +29,7 @@ public class P1033_칵테일 {
             int p = sc.nextInt();
             int q = sc.nextInt();
             A[a].add(new cNode(b, p, q));
-            A[b].add(new cNode(a, p, q));
+            A[b].add(new cNode(a, q, p));
             lcm *= (p * q / gcd(p, q));
         }
         D[0] = lcm;
@@ -64,11 +65,11 @@ public class P1033_칵테일 {
     }
 
     public static class cNode {
-        private int b;
-        private int p;
-        private int q;
+        int b;
+        int p;
+        int q;
+
         public cNode(int b, int p, int q) {
-            super();
             this.b = b;
             this.p = p;
             this.q = q;
@@ -87,3 +88,4 @@ public class P1033_칵테일 {
         }
     }
 }
+
