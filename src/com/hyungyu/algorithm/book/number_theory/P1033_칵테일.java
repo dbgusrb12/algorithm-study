@@ -21,7 +21,7 @@ public class P1033_칵테일 {
         D = new long[N];
         lcm = 1;
         for (int i = 0; i < N; i++) {
-            A[i] = new ArrayList<cNode>();
+            A[i] = new ArrayList<>();
         }
         for (int i = 0; i < N - 1; i++) {
             int a = sc.nextInt();
