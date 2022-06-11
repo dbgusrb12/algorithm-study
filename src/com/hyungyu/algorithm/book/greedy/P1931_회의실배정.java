@@ -1,7 +1,6 @@
 package com.hyungyu.algorithm.book.greedy;
 
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.Scanner;
 
 public class P1931_회의실배정 {

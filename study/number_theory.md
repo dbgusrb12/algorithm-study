@@ -62,3 +62,30 @@ ax + by = c
 이 때 위의 방정식은 `c % gcd(a, b) = 0` 인 경우에만 정수해를 가진다.  
 다시 말해 c 가 a 와 b 의 최대 공약수의 배수인 경우에만 정수해를 가진다.  
 이는 `ax + by = c` 가 정수해를 갖게하는 c 의 최솟값이 gcd(a, b) 라는 것을 의미한다.
+
+
+## `Comparator` VS `Comparable`
+
+자바에서 정렬을 할 때 `primitive type` 의 경우 부등호로 쉽게 대소 비교를 하여 정렬 할 수 있지만,  
+객체의 경우 어떤 필드 값을 기준으로 정렬을 할지 모르는 상황이 생긴다.
+
+객체를 비교하고, 정렬 할 수 있게끔 java 에서 제공해주는 두가지 인터페이스가 있는데,  
+`Comparator` 와 `Comparable` 이 그것이다.
+
+`Comparator`, `Comparable` 둘 다 인터페이스 이며, 객체의 비교, 정렬을 위해 사용하는 점에 있어서는 비슷하지만,  
+비교 하는 대상이 다르다.
+
+`Comparable` 은 `java.lang` 패키지에 있어 `import` 를 할 필요가 없고,  
+`Comparator` 는 `java.util` 패키지에 있어 `import` 가 필요하다는 점이 다르다.
+
+`Comparator` 의 경우 `compare(T o1, T o2)` 메서드를 구현해야 하며,  
+`Comparable` 의 경우 `compareTo(T o)` 메서드를 구현해야 한다.
+
+즉, `Comparable` 은 자기 자신과 파라미터로 들어오는 객체를 비교하는 것이고,  
+`Comparator` 는 자기 자신은 상관없이 파라미터로 들어오는 두 객체를 비교한다는 것이다.
+
+그래서 `Comparable` 은 자기 자신과 비교하기 때문에 클래스에 직접 구현해서 사용하고,  
+`Comparator` 는 익명 객체로 생성하여 두 객체를 매개변수로 넣고 사용한다.
+
+`compare(T o1, T o2)`, `compareTo(T o)` 두 메서드 모두 대소 비교를 통해 -1, 0, 1 을 return 하는 것이 아닌  
+`a - b` 이런 식으로 대소 비교를 하는 경우 오버플로우를 조심해야 한다.
