@@ -11,16 +11,22 @@ import java.util.StringTokenizer;
 public class P1516_게임개발 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        // 건물 개수
         int N = Integer.parseInt(br.readLine());
+        // 인접 리스트 선언 및 초기화
         ArrayList<Integer>[] adjacencyList = new ArrayList[N + 1];
         for (int i = 1; i <= N; i++) {
             adjacencyList[i] = new ArrayList<>();
         }
+        // 진입 차수 배열
         int[] inDegree = new int[N + 1];
+        // 건물 건설 시간 배열 선언 및 초기화
         int[] buildTime = new int[N + 1];
         for (int i = 1; i <= N; i++) {
             StringTokenizer st = new StringTokenizer(br.readLine());
+            // 건물 건설 시간 데이터 저장
             buildTime[i] = Integer.parseInt(st.nextToken());
+            // 인접 리스트 데이터 저장
             while (true) {
                 int buildingId = Integer.parseInt(st.nextToken());
                 if (buildingId == -1) {
@@ -37,6 +43,7 @@ public class P1516_게임개발 {
             }
         }
         int[] result = new int[N + 1];
+        // 위상 정렬 실행
         while (!queue.isEmpty()) {
             Integer current = queue.poll();
             for (Integer next : adjacencyList[current]) {
