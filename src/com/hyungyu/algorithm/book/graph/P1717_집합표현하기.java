@@ -25,12 +25,10 @@ public class P1717_집합표현하기 {
             int targetNode = Integer.parseInt(st.nextToken());
             if (question == 0) {
                 union(node, targetNode);
+            } else if (isSameSet(node, targetNode)) {
+                System.out.println("YES");
             } else {
-                if (isSameSet(node, targetNode)) {
-                    System.out.println("YES");
-                } else {
-                    System.out.println("NO");
-                }
+                System.out.println("NO");
             }
         }
     }
@@ -53,9 +51,6 @@ public class P1717_집합표현하기 {
     public static boolean isSameSet(int node, int targetNode) {
         node = find(node);
         targetNode = find(targetNode);
-        if (node == targetNode) {
-            return true;
-        }
-        return false;
+        return node == targetNode;
     }
 }

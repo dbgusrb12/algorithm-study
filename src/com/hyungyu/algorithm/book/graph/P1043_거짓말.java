@@ -72,9 +72,6 @@ public class P1043_거짓말 {
     public static boolean isSameSet(int node, int targetNode) {
         node = find(node);
         targetNode = find(targetNode);
-        if (node == targetNode) {
-            return true;
-        }
-        return false;
+        return node == targetNode;
     }
 }
