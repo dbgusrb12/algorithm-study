@@ -19,7 +19,7 @@ public class P11403_경로찾기 {
                 distance[i][j] = value;
             }
         }
-        // 플로이드-워셜 알고리즘 수행 (
+        // 플로이드-워셜 알고리즘 수행
         for (int k = 0; k < N; k++) {
             for (int i = 0; i < N; i++) {
                 for (int j = 0; j < N; j++) {
