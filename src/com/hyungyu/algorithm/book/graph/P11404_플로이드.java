@@ -8,8 +8,11 @@ import java.util.StringTokenizer;
 public class P11404_플로이드 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        // 도시 개수
         int N = Integer.parseInt(br.readLine());
+        // 노선 개수
         int M = Integer.parseInt(br.readLine());
+        // 인접 행렬 선언 및 초기화
         int[][] distance = new int[N + 1][N + 1];
         for (int i = 1; i <= N; i++) {
             for (int j = 1; j <= N; j++) {
@@ -20,6 +23,7 @@ public class P11404_플로이드 {
                 }
             }
         }
+        // 인접 행렬 값 저장
         for (int i = 0; i < M; i++) {
             StringTokenizer st = new StringTokenizer(br.readLine());
             int start = Integer.parseInt(st.nextToken());
@@ -29,6 +33,7 @@ public class P11404_플로이드 {
                 distance[start][end] = value;
             }
         }
+        // 플로이드-워셜 알고리즘 수행
         for (int k = 1; k <= N; k++) {
             for (int i = 1; i <= N; i++) {
                 for (int j = 1; j <= N; j++) {
