@@ -37,7 +37,7 @@ public class P11438_LCA2 {
         int temp = 1;
         kMaxValue = 0;
         while (temp <= N) {
-            temp <<= 1;
+            temp *= 2;
             kMaxValue++;
         }
         parent = new int[kMaxValue + 1][N + 1];
