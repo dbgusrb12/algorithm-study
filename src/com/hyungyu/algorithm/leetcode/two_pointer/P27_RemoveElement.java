@@ -3,7 +3,7 @@ package com.hyungyu.algorithm.leetcode.two_pointer;
 public class P27_RemoveElement {
 
     public static void main(String[] args) {
-        int[] nums = {0,1,2,2,3,0,4,2};
+        int[] nums = {0, 1, 2, 2, 3, 0, 4, 2};
         int val = 2;
         int k = removeElement(nums, val);
         System.out.println(k);
